@@ -5,6 +5,7 @@
 #include "Item.h"
 #include "Player.h"
 #include "Tile.h"
+#include <stdio.h>
 
 using namespace std;
 
@@ -50,7 +51,7 @@ int main()
         case ContestResults::FAIL:
             cout << "barry did not pass :c" << endl;
             cout << "Now barry will take damage! " << endl;
-            
+
             barry.take_damage(70, DamageType::BRN);
             break;
     }
