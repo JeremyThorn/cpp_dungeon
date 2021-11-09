@@ -5,7 +5,11 @@ void GameMaster::init(){
 }
 
 int GameMaster::rolld100(){
-    return rand() % 100;
+    static random_device rd;
+    static default_random_engine g(rd());
+    static uniform_int_distribution<int> d(1,100);
+    static auto rando = bind(d,g);
+    return rando();
 }
 
 ContestResults GameMaster::contest(Player* player, Attribute attribute, int challenge){
