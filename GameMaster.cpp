@@ -49,7 +49,7 @@ void GameMaster::combat_round(Player* player1, Player* player2){
     int ac_2 = player2->get_armour();
 
     if(init_1 > init_2){
-        contest(player1, attack_style_1, ac_2);
+        ContestResults res = contest(player1, attack_style_1, ac_2);
 
     }
     else if(init_2 > init_1){
