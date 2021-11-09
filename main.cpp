@@ -61,6 +61,7 @@ int main()
     barry.unequip(&hat);
     cout << "These are barrys attributes. " << endl;
     barry.print_contest_attributes();
+   
 
     return 0;
 }

@@ -43,9 +43,11 @@ ContestResults GameMaster::contest(Player* player, Attribute attribute, int chal
 }
 
 void GameMaster::combat_round(Player* player1, Player* player2){
+    /* Dont want to do this like this at all its shit*/
 
     int init_1 = player1->get_inititive();
     int init_2 = player2->get_inititive();
+
     Attribute attack_style_1 = player1->get_attack_style();
     Attribute attack_style_2 = player2->get_attack_style();
 
@@ -54,6 +56,16 @@ void GameMaster::combat_round(Player* player1, Player* player2){
 
     if(init_1 > init_2){
         ContestResults res = contest(player1, attack_style_1, ac_2);
+        switch (res)
+        {
+        case ContestResults::PASS:
+            /* code */
+            break;
+        
+        case ContestResults::FAIL:
+            contest(player2, attack_style_2, ac_1);
+            break;
+        }
 
     }
     else if(init_2 > init_1){
